@@ -1,0 +1,145 @@
+ @import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+
+ body {
+ 	overflow-x:hidden;
+	padding:0;
+	margin:0;
+	border:0;
+	font-family: 'Montserrat', sans-serif;
+ }
+.with-tux {
+	background-image: url("images/tux.png");
+    	background-repeat: no-repeat;
+   	background-attachment: fixed;
+	background-position: 60vw center;
+}
+#left-text {
+	 width:50vw;
+	 margin: 5vw 40vw auto 10vw;
+	 color:black; 	
+	 text-align:center;
+ }
+@keyframes slideDown{
+	from{
+		top:-15vh;
+	}
+	to{
+		top:0;
+	}
+}
+
+@keyframes slideUp{
+	from{
+		top:0;
+	}
+	to{
+		top:-15vh;
+	}
+}
+@keyframes slideLeft{
+	from{
+		left:100vw;
+	}
+	to{
+		left:85vw;
+	}
+}
+
+@keyframes slideRight{
+	from{
+		left:85vw;
+	}
+	to{
+		left:100vw;
+	}
+}
+#up {
+	 position:fixed;
+	 left:0;
+	 top:0;
+	 width:100vw;
+	 height:15vh;
+ }
+#up-arrow {
+	position:fixed;
+	width:100vw;
+	top:-15vh;
+	height:15vh;
+	background: center / auto no-repeat url('images/up-arrow.png'), linear-gradient( rgba(150,150,150,0.5), rgba(255,255,255,0));	
+}
+#up:hover * {
+
+	animation-name:slideDown;
+	animation-duration:600ms;
+	top:0;
+}
+#up:not(:hover) * {
+	animation-name:slideUp;
+	animation-duration:800ms;
+	top:-15vh;
+}
+#right {
+	position:fixed;
+	left:85vw;
+	top:15vh;
+	height:85vh;
+	width: 15vw;
+}
+#right-arrow {
+	position:fixed;
+	left:100vw;
+	top:15vh;
+	height:85vh;
+	width: 15vw;
+	border-radius:50% 0 0 50%;
+	background: center / auto no-repeat url('images/right-arrow.png'), linear-gradient( 0deg,rgba(255,255,255,0.5),rgba(150,150,150,0.5),rgb(255,255,255,0.5));	
+}
+#right:hover * {
+
+	animation-name:slideLeft;
+	animation-duration:600ms;
+	left:85vw;
+}
+#right:not(:hover) * {
+	animation-name:slideRight;
+	animation-duration:800ms;
+	left:100vw;
+}
+
+ #left-information {
+ 	position:fixed;
+	width:100vh;
+	height:7vw;
+	padding: 0;
+	line-height: 7vw;
+	transform:rotate(-90deg);
+	top:calc( ( 100vh - 7vw )/2 );
+	left:calc( ( 7vw - 100vh )/2 );
+	border-style:solid;
+	border-width: 0 0 1px 0;
+	border-image: linear-gradient(to right, transparent, #ccc 20%, #333 50%,#ccc 80%, transparent);
+	border-image-slice: 1;
+ }
+ 
+ ul {
+ 	padding:0;
+ 	margin:0;
+	list-style-type:none;
+ 	display:flex;
+	justify-content: space-evenly;
+	font-size: 1.3em;
+ }
+ ul:first-child {
+ 	font-style:italic;	
+ }
+ a {
+ 	text-decoration:none;
+	outline:0;
+	color:black;
+ }
+ 
+ p {
+ 	text-align:left;
+	text-indent:50px;
+ }
